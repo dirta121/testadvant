@@ -45,7 +45,7 @@ using System.Collections.Generic;
         {
             get
             {
-                return Lvl * BaseIncome * (1 + (Updates.Sum(s=>s.IncomeMultiplier)));
+                return Lvl * BaseIncome * (1 + (Updates.Where(w=>w.Purchased).Sum(s=>s.IncomeMultiplier)));
             }
         }
         public uint Lvl { get; set; }
